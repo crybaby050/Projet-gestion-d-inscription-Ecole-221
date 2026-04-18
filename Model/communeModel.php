@@ -16,6 +16,10 @@ function arrayToJson($array){
     return file_put_contents($path, $tab);
 }
 
+
+
+
+
 $data = jsonToArray();
 
 //var_dump($etudiant['etudiants'])
