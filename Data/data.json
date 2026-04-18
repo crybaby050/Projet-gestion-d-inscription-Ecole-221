@@ -1,0 +1,22 @@
+{
+    "etudiants": [
+        {
+            "id": 1,
+            "nom": "Thiam",
+            "prenom": "Seydina",
+            "mail": "seydinathiam@gmail.com"
+        },
+        {
+            "id": 2,
+            "nom": "Thiam",
+            "prenom": "Seynabou",
+            "mail": "seynabouthiam@gmail.com"
+        },
+        {
+            "id": 3,
+            "nom": "Thiam",
+            "prenom": "ALioune",
+            "mail": "aliounethiam@gmail.com"
+        }
+    ]
+}
