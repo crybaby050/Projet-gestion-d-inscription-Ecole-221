@@ -84,3 +84,39 @@ function rechercherFormationParId(int $id, array $formations): ?array {
     return null;
 }
 
+function modifierFormation(array &$formations): void {
+    $id = (int) readline("ID de la formation a modifier : ");
+    $formation = rechercherFormationParId($id, $formations);
+
+    if (!$formation) {
+        echo "  Formation introuvable.\n";
+        return;
+    }
+
+    echo "  Laissez vide pour garder la valeur actuelle.\n";
+
+    do {
+        $titre = readline("Nouveau titre [{$formation['titre']}] : ");
+        if ($titre === '') {
+            $titre = $formation['titre'];
+            break;
+        }
+        if ($titre !== $formation['titre'] && titreUnique($titre, $formations)) {
+            echo "  Ce titre existe deja.\n";
+        }
+    } while ($titre !== $formation['titre'] && titreUnique($titre, $formations));
+
+    $description = readline("Nouvelle description [{$formation['description']}] : ");
+    $duree       = readline("Nouvelle duree [{$formation['duree']}] : ");
+
+    foreach ($formations as &$f) {
+        if ($f['id'] === $id) {
+            $f['titre']       = $titre;
+            $f['description'] = $description !== '' ? $description : $f['description'];
+            $f['duree']       = $duree !== '' ? $duree : $f['duree'];
+            break;
+        }
+    }
+    saveFormation($formations);
+    echo "  Formation modifiee avec succes !\n";
+}
