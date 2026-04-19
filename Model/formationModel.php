@@ -57,3 +57,20 @@ function ajoutFormation(array $form, array $formations): void {
     saveFormation($formations);
     echo "\n  Formation ajoutee avec succes ! (ID : " . $newFormation['id'] . ")\n";
 }
+
+function afficheToutesLesFormations(array $formations): void {
+    if (empty($formations)) {
+        echo "\n  Aucune formation enregistree.\n";
+        return;
+    }
+    echo "\n";
+    echo "------------------------------------\n";
+    foreach ($formations as $f) {
+        echo "ID          : " . $f['id'] . "\n";
+        echo "Titre       : " . $f['titre'] . "\n";
+        echo "Duree       : " . $f['duree'] . "\n";
+        echo "Description : " . ($f['description'] ?? 'Non renseignee') . "\n";
+        echo "------------------------------------\n";
+    }
+    echo "\n";
+}
