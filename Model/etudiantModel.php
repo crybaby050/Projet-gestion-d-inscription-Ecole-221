@@ -157,4 +157,3 @@ function supprimerEtudiant(array &$etudiants): void {
     }
 }
 ?>
-?>
