@@ -129,4 +129,31 @@ function modifierEtudiant(array &$etudiants): void {
     saveEtudiant($etudiants);
     echo "  Etudiant modifie avec succes !\n";
 }
+
+function supprimerEtudiant(array &$etudiants): void {
+    $id       = (int) readline("ID de l'etudiant a supprimer : ");
+    $etudiant = rechercherEtudiantParId($id, $etudiants);
+
+    if (!$etudiant) {
+        echo "  Etudiant introuvable.\n";
+        return;
+    }
+
+    echo "  Etudiant : {$etudiant['nom']} {$etudiant['prenom']} ({$etudiant['mail']})\n";
+    $confirm = readline("  Confirmer la suppression ? (o/n) : ");
+
+    if (strtolower($confirm) === 'o') {
+        foreach ($etudiants as $index => $e) {
+            if ($e['id'] === $id) {
+                unset($etudiants[$index]);
+                break;
+            }
+        }
+        $etudiants = array_values($etudiants);
+        saveEtudiant($etudiants);
+        echo "  Etudiant supprime avec succes !\n";
+    } else {
+        echo "  Suppression annulee.\n";
+    }
+}
 ?>
