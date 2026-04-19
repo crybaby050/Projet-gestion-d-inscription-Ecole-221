@@ -88,4 +88,45 @@ function rechercherEtudiantParId(int $id, array $etudiants): ?array {
     }
     return null;
 }
+
+function modifierEtudiant(array &$etudiants): void {
+    $id       = (int) readline("ID de l'etudiant a modifier : ");
+    $etudiant = rechercherEtudiantParId($id, $etudiants);
+
+    if (!$etudiant) {
+        echo "  Etudiant introuvable.\n";
+        return;
+    }
+
+    echo "  Laissez vide pour garder la valeur actuelle.\n";
+
+    $nom       = readline("Nouveau nom [{$etudiant['nom']}] : ");
+    $prenom    = readline("Nouveau prenom [{$etudiant['prenom']}] : ");
+    $telephone = readline("Nouveau telephone [{$etudiant['telephone']}] : ");
+
+    do {
+        $mail = readline("Nouvel email [{$etudiant['mail']}] : ");
+        if ($mail === '') {
+            $mail = $etudiant['mail'];
+            break;
+        }
+        if (!validerEmail($mail)) {
+            echo "  Email invalide.\n";
+        } elseif ($mail !== $etudiant['mail'] && mailUnique($mail, $etudiants)) {
+            echo "  Email deja utilise.\n";
+        }
+    } while (!validerEmail($mail) || ($mail !== $etudiant['mail'] && mailUnique($mail, $etudiants)));
+
+    foreach ($etudiants as &$e) {
+        if ($e['id'] === $id) {
+            $e['nom']       = $nom !== '' ? $nom : $e['nom'];
+            $e['prenom']    = $prenom !== '' ? $prenom : $e['prenom'];
+            $e['mail']      = $mail;
+            $e['telephone'] = $telephone !== '' ? $telephone : $e['telephone'];
+            break;
+        }
+    }
+    saveEtudiant($etudiants);
+    echo "  Etudiant modifie avec succes !\n";
+}
 ?>
