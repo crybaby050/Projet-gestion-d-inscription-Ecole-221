@@ -45,3 +45,15 @@ function saisieFormation(array $formations): array {
         'duree'       => $duree
     ];
 }
+
+function ajoutFormation(array $form, array $formations): void {
+    $newFormation = [
+        "id"          => newIdFormation($formations),
+        "titre"       => $form['titre'],
+        "description" => $form['description'],
+        "duree"       => $form['duree']
+    ];
+    $formations[] = $newFormation;
+    saveFormation($formations);
+    echo "\n  Formation ajoutee avec succes ! (ID : " . $newFormation['id'] . ")\n";
+}
