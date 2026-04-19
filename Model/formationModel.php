@@ -120,3 +120,30 @@ function modifierFormation(array &$formations): void {
     saveFormation($formations);
     echo "  Formation modifiee avec succes !\n";
 }
+
+function supprimerFormation(array &$formations): void {
+    $id        = (int) readline("ID de la formation a supprimer : ");
+    $formation = rechercherFormationParId($id, $formations);
+
+    if (!$formation) {
+        echo "  Formation introuvable.\n";
+        return;
+    }
+
+    echo "  Formation : {$formation['titre']} ({$formation['duree']})\n";
+    $confirm = readline("  Confirmer la suppression ? (o/n) : ");
+
+    if (strtolower($confirm) === 'o') {
+        foreach ($formations as $index => $f) {
+            if ($f['id'] === $id) {
+                unset($formations[$index]);
+                break;
+            }
+        }
+        $formations = array_values($formations);
+        saveFormation($formations);
+        echo "  Formation supprimee avec succes !\n";
+    } else {
+        echo "  Suppression annulee.\n";
+    }
+}
