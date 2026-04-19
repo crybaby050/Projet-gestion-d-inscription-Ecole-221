@@ -62,40 +62,30 @@ function ajoutEtudiant(array $etds, array $etudiants): array {
     return $newEtudiant;
 }
 
-function afficheToutLesEtudiants(array $etudiants): void {
+function afficheTousLesEtudiants(array $etudiants): void {
     if (empty($etudiants)) {
-        echo "Aucun étudiant enregistré.\n";
+        echo "\n  Aucun etudiant enregistre.\n";
         return;
     }
-    foreach ($etudiants as $etudiant) {
-        echo "ID     : " . $etudiant['id'] . "\n";
-        echo "Nom    : " . $etudiant['nom'] . "\n";
-        echo "Prenom : " . $etudiant['prenom'] . "\n";
-        echo "Mail   : " . $etudiant['mail'] . "\n";
-        echo "----------------------------\n";
+    echo "\n";
+    echo "------------------------------------\n";
+    foreach ($etudiants as $e) {
+        echo "ID        : " . $e['id'] . "\n";
+        echo "Nom       : " . $e['nom'] . "\n";
+        echo "Prenom    : " . $e['prenom'] . "\n";
+        echo "Email     : " . $e['mail'] . "\n";
+        echo "Telephone : " . ($e['telephone'] ?? 'Non renseigne') . "\n";
+        echo "------------------------------------\n";
     }
+    echo "\n";
 }
-/*
-do {
-    echo "\n=== MENU ===\n";
-    echo "1 - Ajouter un étudiant\n";
-    echo "2 - Afficher tous les étudiants\n";
-    echo "0 - Quitter\n";
 
-    $n = (int) readline("Faire un choix : ");
-
-    if ($n == 1) {
-        $etu = saisieEtudiant($etudiants);
-        $nouveau = ajoutEtudiant($etu, $etudiants);
-        $etudiants[] = $nouveau; // mise à jour du tableau en mémoire
-        echo "Étudiant ajouté avec succès !\n";
-    } elseif ($n == 2) {
-        afficheToutLesEtudiants($etudiants);
-    } elseif ($n != 0) {
-        echo "Choix invalide, veuillez réessayer.\n";
+function rechercherEtudiantParId(int $id, array $etudiants): ?array {
+    foreach ($etudiants as $etudiant) {
+        if ($etudiant['id'] === $id) {
+            return $etudiant;
+        }
     }
-
-} while ($n != 0);
-*/
-//echo "Au revoir !\n";
+    return null;
+}
 ?>
