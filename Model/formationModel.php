@@ -27,3 +27,21 @@ function newIdFormation(array $formations): int {
     }
     return $maxId + 1;
 }
+
+function saisieFormation(array $formations): array {
+    do {
+        $titre = readline("Titre       : ");
+        if (titreUnique($titre, $formations)) {
+            echo "  Ce titre existe deja. Reessayez.\n";
+        }
+    } while (titreUnique($titre, $formations));
+
+    $description = readline("Description : ");
+    $duree       = intval(readline("Duree       : "));
+
+    return [
+        'titre'       => $titre,
+        'description' => $description,
+        'duree'       => $duree
+    ];
+}
