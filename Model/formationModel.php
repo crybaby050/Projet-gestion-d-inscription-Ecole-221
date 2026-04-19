@@ -74,3 +74,13 @@ function afficheToutesLesFormations(array $formations): void {
     }
     echo "\n";
 }
+
+function rechercherFormationParId(int $id, array $formations): ?array {
+    foreach ($formations as $formation) {
+        if ($formation['id'] === $id) {
+            return $formation;
+        }
+    }
+    return null;
+}
+
