@@ -143,7 +143,12 @@ function supprimerEtudiant(array &$etudiants): void {
     $confirm = readline("  Confirmer la suppression ? (o/n) : ");
 
     if (strtolower($confirm) === 'o') {
-        $etudiants = array_filter($etudiants, fn($e) => $e['id'] !== $id);
+        foreach ($etudiants as $index => $e) {
+            if ($e['id'] === $id) {
+                unset($etudiants[$index]);
+                break;
+            }
+        }
         $etudiants = array_values($etudiants);
         saveEtudiant($etudiants);
         echo "  Etudiant supprime avec succes !\n";
