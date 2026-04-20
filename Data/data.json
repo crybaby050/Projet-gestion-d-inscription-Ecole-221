@@ -5,28 +5,35 @@
             "nom": "Thiam",
             "prenom": "Seydina",
             "mail": "seydinathiam@gmail.com",
-            "telephone": ""
+            "telephone": "777234567"
         },
         {
             "id": 2,
             "nom": "Thiam",
             "prenom": "Seynabou",
             "mail": "seynabouthiam@gmail.com",
-            "telephone": ""
+            "telephone": "778900293"
         },
         {
             "id": 3,
             "nom": "Thiam",
             "prenom": "ALioune",
             "mail": "aliounethiam@gmail.com",
-            "telephone": ""
+            "telephone": "767758839"
         },
         {
             "id": 4,
             "nom": "ben",
             "prenom": "thiam",
             "mail": "benthiam@gmail.com",
-            "telephone": ""
+            "telephone": "766574382"
+        },
+        {
+            "id": 5,
+            "nom": "lo",
+            "prenom": "khadi",
+            "mail": "khadi@gmail.com",
+            "telephone": "778883322"
         }
     ],
     "formations": [
@@ -51,14 +58,8 @@
         {
             "id": 4,
             "titre": "dev webb",
-            "description": "dkenkenkncknkecnnewcnwenlcnnewncknencknewnckenwcnewk",
-            "duree": 5
-        },
-        {
-            "id": 5,
-            "titre": "dev mobile",
-            "description": "ninn",
-            "duree": 0
+            "description": "bonjour le monde",
+            "duree": "5 ans"
         }
     ]
 }
