@@ -1,0 +1,65 @@
+{
+    "etudiants": [
+        {
+            "id": 1,
+            "nom": "Thiam",
+            "prenom": "Seydina",
+            "mail": "seydinathiam@gmail.com",
+            "telephone": "777234567"
+        },
+        {
+            "id": 2,
+            "nom": "Thiam",
+            "prenom": "Seynabou",
+            "mail": "seynabouthiam@gmail.com",
+            "telephone": "778900293"
+        },
+        {
+            "id": 3,
+            "nom": "Thiam",
+            "prenom": "ALioune",
+            "mail": "aliounethiam@gmail.com",
+            "telephone": "767758839"
+        },
+        {
+            "id": 4,
+            "nom": "ben",
+            "prenom": "thiam",
+            "mail": "benthiam@gmail.com",
+            "telephone": "766574382"
+        },
+        {
+            "id": 5,
+            "nom": "lo",
+            "prenom": "khadi",
+            "mail": "khadi@gmail.com",
+            "telephone": "778883322"
+        }
+    ],
+    "formations": [
+        {
+            "id": 1,
+            "titre": "Genie Logiciel",
+            "description": "Formation en developpement et conception logicielle",
+            "duree": "3 ans"
+        },
+        {
+            "id": 2,
+            "titre": "Marketing Digital",
+            "description": "Formation en communication et marketing en ligne",
+            "duree": "2 ans"
+        },
+        {
+            "id": 3,
+            "titre": "Comptabilite et Gestion",
+            "description": "Formation en finance et gestion d entreprise",
+            "duree": "3 ans"
+        },
+        {
+            "id": 4,
+            "titre": "dev webb",
+            "description": "bonjour le monde",
+            "duree": "5 ans"
+        }
+    ]
+}
