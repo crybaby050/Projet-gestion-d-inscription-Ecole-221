@@ -47,6 +47,18 @@
             "titre": "Comptabilite et Gestion",
             "description": "Formation en finance et gestion d entreprise",
             "duree": "3 ans"
+        },
+        {
+            "id": 4,
+            "titre": "dev webb",
+            "description": "dkenkenkncknkecnnewcnwenlcnnewncknencknewnckenwcnewk",
+            "duree": 5
+        },
+        {
+            "id": 5,
+            "titre": "dev mobile",
+            "description": "ninn",
+            "duree": 0
         }
     ]
 }
