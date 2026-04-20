@@ -41,6 +41,13 @@
             "prenom": "demba",
             "mail": "fall@gmail.com",
             "telephone": "788822332"
+        },
+        {
+            "id": 8,
+            "nom": "lo",
+            "prenom": "khadi",
+            "mail": "lokhadi@gmail.com",
+            "telephone": "778839948"
         }
     ],
     "formations": [
