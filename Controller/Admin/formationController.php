@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../Model/formationModel.php';
+require_once __DIR__ . '/../../Model/formationModel.php';
 
 function menuFormation(): void {
     $data       = jsonToArray();

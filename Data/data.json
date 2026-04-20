@@ -34,14 +34,21 @@
             "prenom": "Abdou",
             "mail": "gueye@gmail.com",
             "telephone": "788998398"
+        },
+        {
+            "id": 7,
+            "nom": "fall",
+            "prenom": "demba",
+            "mail": "fall@gmail.com",
+            "telephone": "788822332"
         }
     ],
     "formations": [
         {
             "id": 1,
             "titre": "Genie Logiciel",
-            "description": "Formation en developpement et conception logicielle",
-            "duree": "3 ans"
+            "description": "mmopewm ccpewmco",
+            "duree": "4 ans"
         },
         {
             "id": 2,
@@ -54,12 +61,6 @@
             "titre": "Comptabilite et Gestion",
             "description": "Formation en finance et gestion d entreprise",
             "duree": "3 ans"
-        },
-        {
-            "id": 4,
-            "titre": "dev webb",
-            "description": "bonjour le monde",
-            "duree": "5 ans"
         }
     ]
 }

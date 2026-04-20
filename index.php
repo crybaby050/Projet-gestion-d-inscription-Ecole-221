@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/Controller/etudiantController.php';
-require_once __DIR__ . '/Controller/formationController.php';
+require_once __DIR__ . '/Controller/Admin/adminController.php';
+require_once __DIR__ . '/Controller/Etudiant/etudiantController.php';
 
 echo "================================\n";
 echo "  ECOLE 221 - Gestion des inscriptions\n";
@@ -8,18 +8,19 @@ echo "================================\n";
 
 do {
     echo "\n=== MENU PRINCIPAL ===\n";
-    echo "1 - Gestion des etudiants\n";
-    echo "2 - Gestion des formations\n";
+    echo "Qui etes-vous ?\n";
+    echo "1 - Administrateur\n";
+    echo "2 - Etudiant\n";
     echo "0 - Quitter\n";
 
     $choix = (int) readline("Votre choix : ");
 
     switch ($choix) {
         case 1:
-            menuEtudiant();
+            menuAdmin();
             break;
         case 2:
-            menuFormation();
+            menuEtudiantPublic();
             break;
         case 0:
             echo "\nAu revoir !\n";
